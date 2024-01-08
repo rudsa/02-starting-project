@@ -31,6 +31,8 @@ const InvestCalculatorForm = (props) => {
       duration: Number(duration),
     };
 
+    props.onSaveCalculatorData(calculatorData);
+
     setCurrentSaving("");
     setYearlyContribution("");
     setExpectedReturn("");

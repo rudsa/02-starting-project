@@ -13,13 +13,17 @@ const InvestCalculatorResult = (props) => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>YEAR NUMBER</td>
-          <td>TOTAL SAVINGS END OF YEAR</td>
-          <td>INTEREST GAINED IN YEAR</td>
-          <td>TOTAL INTEREST GAINED</td>
-          <td>TOTAL INVESTED CAPITAL</td>
-        </tr>
+        {props.calculateResult.map((data) => {
+          return (
+            <tr key={data.year}>
+              <td>{data.year}</td>
+              <td>$ {data.savingsEndOfYear}</td>
+              <td>$ {data.yearlyInterest}</td>
+              <td>TOTAL INTEREST GAINED</td>
+              <td>$ {data.yearlyContribution}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
