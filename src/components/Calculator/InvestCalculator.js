@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import InvestCalculatorHeader from "../UI/InvestCalculatorHeader";
 import InvestCalculatorForm from "../CalculatorForm/InvestCalculatorForm";
-import InvestCalculatorResult from "../CalculatorForm/InvestCalculatorResult";
+import InvestCalculatorResult from "./InvestCalculatorResult";
 
 const InvestCalculator = () => {
   const [yearlyData, setYearlyData] = useState([]);
 
   const calculateHandler = (userInput) => {
-    const yearlyData = [];
+    const yearlyElementData = [];
 
     let currentSavings = +userInput["currentSaving"];
     const yearlyContribution = +userInput["yearlyContribution"];
@@ -20,7 +20,7 @@ const InvestCalculator = () => {
       currentSavings += yearlyInterest + yearlyContribution;
       totalInterest = Math.round((totalInterest + yearlyInterest) * 100) / 100; //eslint-disable-line no-unused-vars
 
-      yearlyData.push({
+      yearlyElementData.push({
         year: i + 1,
         savingsEndOfYear: Math.round(currentSavings * 100) / 100,
         yearlyInterest: yearlyInterest,
