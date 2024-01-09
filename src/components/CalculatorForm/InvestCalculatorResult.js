@@ -19,7 +19,7 @@ const InvestCalculatorResult = (props) => {
               <td>{data.year}</td>
               <td>$ {data.savingsEndOfYear}</td>
               <td>$ {data.yearlyInterest}</td>
-              <td>TOTAL INTEREST GAINED</td>
+              <td>$ {data.totalInterest}</td>
               <td>$ {data.yearlyContribution}</td>
             </tr>
           );

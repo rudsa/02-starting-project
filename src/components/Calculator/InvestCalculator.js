@@ -13,15 +13,20 @@ const InvestCalculator = () => {
     const yearlyContribution = +userInput["yearlyContribution"];
     const expectedReturn = +userInput["expectedReturn"] / 100;
     const duration = +userInput["duration"];
-
+    let totalInterest = 0;
     for (let i = 0; i < duration; i++) {
-      const yearlyInterest = currentSavings * expectedReturn;
+      const yearlyInterest =
+        Math.round(currentSavings * expectedReturn * 100) / 100;
       currentSavings += yearlyInterest + yearlyContribution;
+      totalInterest = Math.round((totalInterest + yearlyInterest) * 100) / 100; //eslint-disable-line no-unused-vars
+
       yearlyData.push({
         year: i + 1,
-        yearlyInterest: Math.round(yearlyInterest),
-        savingsEndOfYear: Math.round(currentSavings),
-        yearlyContribution: yearlyContribution,
+        savingsEndOfYear: Math.round(currentSavings * 100) / 100,
+        yearlyInterest: yearlyInterest,
+        totalInterest: totalInterest,
+        yearlyContribution:
+          userInput["currentSaving"] + yearlyContribution * (i + 1),
       });
     }
 
