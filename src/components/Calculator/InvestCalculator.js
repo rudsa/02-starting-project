@@ -30,7 +30,7 @@ const InvestCalculator = () => {
       });
     }
 
-    setYearlyData(yearlyData);
+    setYearlyData(yearlyElementData);
   };
 
   return (
