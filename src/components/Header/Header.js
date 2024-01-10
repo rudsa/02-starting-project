@@ -2,7 +2,7 @@ import React from "react";
 
 import logo from "../../assets/investment-calculator-logo.png";
 
-const InvestCalculatorHeader = () => {
+const Header = () => {
   return (
     <header className="header">
       <img src={logo} alt="logo" />
@@ -11,4 +11,4 @@ const InvestCalculatorHeader = () => {
   );
 };
 
-export default InvestCalculatorHeader;
+export default Header;

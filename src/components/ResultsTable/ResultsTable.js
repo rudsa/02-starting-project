@@ -1,6 +1,6 @@
 import React from "react";
 
-const InvestCalculatorResult = (props) => {
+const ResultsTable = (props) => {
   return (
     <table className="result">
       <thead>
@@ -29,4 +29,4 @@ const InvestCalculatorResult = (props) => {
   );
 };
 
-export default InvestCalculatorResult;
+export default ResultsTable;
